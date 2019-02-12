@@ -5,7 +5,7 @@ import android.graphics.Color;
 import java.util.Random;
 
 public class ColorWheel {
-    private static String[] colors = {
+    public String[] colors = {
             "#39add1", // light blue
             "#3079ab", // dark blue
             "#c25975", // mauve
@@ -21,7 +21,7 @@ public class ColorWheel {
             "#b7c0c7"  // light gray
     };
 
-    public static Integer getColor(){
+    public Integer getColor(){
         Random randomGen = new Random();
         int randNum = randomGen.nextInt(colors.length);
         int color = Color.parseColor(colors[randNum]);

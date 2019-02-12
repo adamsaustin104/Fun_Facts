@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
@@ -10,6 +10,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/didYouKnowTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Did you know?"
@@ -24,19 +25,26 @@
 
     <TextView
         android:id="@+id/tvFunFacts"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/btShowFacts"
+        android:layout_below="@+id/didYouKnowTextView"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="366dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:text="Ants stretch when they wake up in the morning."
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="356dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btShowFacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/didYouKnowTextView"
+        app:layout_constraintVertical_bias="0.411" />
 
     <Button
         android:id="@+id/btShowFacts"
@@ -44,9 +52,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/white"
         android:text="Show Another Fun Fact"
-        android:textColor="@android:color/holo_blue_light" />
+        android:textColor="@android:color/holo_blue_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
